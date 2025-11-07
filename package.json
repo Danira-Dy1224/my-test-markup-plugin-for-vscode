@@ -1,0 +1,55 @@
+{
+  "name": "my-test-markup-plugin",
+  "displayName": "test_markup_plugin",
+  "description": "Plagin for the lab. Perhaps, this extention will do something (Fetches C++ function documentation from cppreference.com and Highlight selected text.).",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:helloWorld.sayHello",
+    "onCommand:cppDocsQuery.fetchInfo"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "my-test-markup-plugin.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "my-test-markup-plugin.fetchInfo", 
+        "title": "Fetch C++ information from documentation"
+      },
+      {
+        "command": "my-test-markup-plagin.highlightText",
+        "title": "Highlight the area of the selected text"
+      }
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.105.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "eslint": "^9.36.0",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
